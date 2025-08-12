@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,47 +16,44 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo/Brand */}
           <div className="flex items-center">
+            <Link href="/">
             <div className="flex-shrink-0">
               <h1 className="text-2xl font-bold text-blue-600">
                 <span className="text-blue-800">URL</span>Short
               </h1>
             </div>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <a
-                href="#"
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-              >
-                Home
-              </a>
-              <a
+              
+              <Link
                 href="#"
                 className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
               >
                 Features
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
               >
                 Analytics
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
               >
                 About
-              </a>
+              </Link>
             </div>
           </div>
 
           {/* CTA Button */}
           <div className="hidden md:block">
             <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200">
-              Shorten URL
+              <Link href="/Shorten">Shorten URL</Link>
             </button>
           </div>
 
@@ -96,33 +94,28 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
-            <a
-              href="#"
-              className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
-            >
-              Home
-            </a>
-            <a
+            
+            <Link
               href="#"
               className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
             >
               Features
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
             >
               Analytics
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
             >
               About
-            </a>
+            </Link>
             <div className="pt-4">
               <button className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200">
-              Shorten URL
+              <Link href="/Shorten">Shorten URL</Link>
               </button>
             </div>
           </div>
